@@ -6,7 +6,11 @@ import * as Yup from "yup";
 import { toast } from "react-hot-toast";
 import { Formik, Form } from "formik";
 import { Dialog, Transition } from "@headlessui/react";
-import { SparklesIcon, MailOpenIcon, XIcon } from "@heroicons/react/24/outline";
+import {
+  SparklesIcon,
+  MailOpenIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import Input from "./Input";
 
 const SignInSchema = Yup.object().shape({
@@ -143,7 +147,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                 onClick={closeModal}
                 className="absolute top-2 right-2 shrink-0 p-1 rounded-md hover:bg-gray-100 transition focus:outline-none"
               >
-                <XIcon className="w-5 h-5" />
+                <XMarkIcon className="w-5 h-5" />
               </button>
 
               <div className="py-12">
