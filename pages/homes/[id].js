@@ -1,9 +1,16 @@
-// pages/homes/[id].js
-
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 
 const ListedHome = (home = null) => {
+  // Retrieve the Next.js router
+  const router = useRouter();
+
+  // Fallback version
+  if (router.isFallback) {
+    return "Loading...";
+  }
+
   return (
     <Layout>
       <div className="max-w-screen-lg mx-auto">
@@ -60,7 +67,7 @@ export async function getStaticPaths() {
     paths: homes.map((home) => ({
       params: { id: home.id },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 
