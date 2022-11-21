@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 import { toast } from "react-hot-toast";

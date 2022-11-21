@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import toast from "react-hot-toast";
 import classNames from "classnames";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";

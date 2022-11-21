@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import PropTypes from "prop-types";
 import AuthModal from "./AuthModal";
 import { Menu, Transition } from "@headlessui/react";
