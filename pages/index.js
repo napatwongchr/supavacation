@@ -1,8 +1,6 @@
 import Layout from "@/components/Layout";
 import Grid from "@/components/Grid";
 
-import homes from "data.json";
-
 // Import the generated Prisma client
 import { PrismaClient } from "@prisma/client";
 
