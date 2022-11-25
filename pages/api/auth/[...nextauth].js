@@ -6,6 +6,7 @@ import { readFileSync } from "fs";
 import path from "path";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
+import GoogleProvider from "next-auth/providers/google";
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_SERVER_HOST,
@@ -72,6 +73,10 @@ export default NextAuth({
     EmailProvider({
       sendVerificationRequest,
       maxAge: 10 * 60, // Magic links are valid for 10 min only
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
   adapter: PrismaAdapter(prisma),
