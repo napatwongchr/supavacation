@@ -36,7 +36,7 @@ const menuItems = [
   {
     label: "Logout",
     icon: ArrowUturnRightIcon,
-    onClick: () => signOut,
+    onClick: signOut,
   },
 ];
 
