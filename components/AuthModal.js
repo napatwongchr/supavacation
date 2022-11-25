@@ -8,7 +8,7 @@ import { Formik, Form } from "formik";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   SparklesIcon,
-  MailOpenIcon,
+  EnvelopeOpenIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import Input from "./Input";
@@ -50,7 +50,7 @@ const Confirm = ({ show = false, email = "" }) => (
           <div className="overflow-hidden transition-all transform">
             <h3 className="text-center text-lg font-medium leading-6">
               <div className="flex flex-col justify-center items-center space-y-4">
-                <MailOpenIcon className="w-12 h-12 shrink-0 text-rose-500" />
+                <EnvelopeOpenIcon className="w-12 h-12 shrink-0 text-rose-500" />
               </div>
               <p className="text-2xl font-semibold mt-2">Confirm your email</p>
             </h3>
