@@ -6,10 +6,11 @@ import Image from "next/legacy/image";
 import PropTypes from "prop-types";
 import AuthModal from "./AuthModal";
 import { Menu, Transition } from "@headlessui/react";
+import { signOut, useSession } from "next-auth/react";
 import {
   HeartIcon,
   HomeIcon,
-  LogoutIcon,
+  ArrowUturnRightIcon,
   PlusIcon,
   SparklesIcon,
   UserIcon,
@@ -34,8 +35,8 @@ const menuItems = [
   },
   {
     label: "Logout",
-    icon: LogoutIcon,
-    onClick: () => null,
+    icon: ArrowUturnRightIcon,
+    onClick: () => signOut,
   },
 ];
 
@@ -44,8 +45,10 @@ const Layout = ({ children = null }) => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const user = null;
-  const isLoadingUser = false;
+  const { data: session, status } = useSession();
+  console.log(session);
+  const user = session?.user;
+  const isLoadingUser = status === "loading";
 
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
@@ -89,6 +92,7 @@ const Layout = ({ children = null }) => {
                             src={user?.image}
                             alt={user?.name || "Avatar"}
                             layout="fill"
+                            priority
                           />
                         ) : (
                           <UserIcon className="text-gray-400 w-6 h-6" />
@@ -113,6 +117,7 @@ const Layout = ({ children = null }) => {
                                 src={user?.image}
                                 alt={user?.name || "Avatar"}
                                 layout="fill"
+                                priority
                               />
                             ) : (
                               <UserIcon className="text-gray-400 w-6 h-6" />
